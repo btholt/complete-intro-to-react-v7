@@ -1,5 +1,7 @@
 {
   "private": true,
+  "license": "(CC-BY-NC-4.0 OR Apache-2.0)",
+  "author": "Brian Holt <btholt+next-course-starter@gmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
