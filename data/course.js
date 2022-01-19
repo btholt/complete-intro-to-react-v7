@@ -15,6 +15,7 @@ const DEFAULT_CONFIG = {
     github: "btholt",
     twitter: "holtbt",
   },
+  productionBaseUrl: "/",
 };
 
 export default function getCourseConfig() {

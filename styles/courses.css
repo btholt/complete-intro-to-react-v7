@@ -402,6 +402,7 @@ ol.sections-name .lesson-preface {
 .lesson-preface.lesson-preface > svg {
   width: 80%;
   height: inherit;
+  max-height: 100px;
 }
 
 ol.sections-name .lesson-preface::before {
@@ -419,7 +420,6 @@ ol.sections-name .lesson-details {
   flex-basis: 100%;
   flex: 1;
   background: var(--bg-lesson);
-  min-width: 600px;
   position: relative;
 }
 
@@ -458,6 +458,12 @@ ol.sections-name .lesson-details {
   ol.sections-name .lesson-details {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lesson-container {
+    padding: 2px;
   }
 }
 

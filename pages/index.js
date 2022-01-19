@@ -1,19 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+
 import { getLessons } from "../data/lesson";
 
 import Corner from "../components/corner";
-import author from "../public/images/author.jpg";
-import courseIcon from "../public/images/course-icon.png";
 import getCourseConfig from "../data/course";
-
-export let meta = (data) => {
-  return {
-    title: data.title,
-    description: data.description,
-  };
-};
 
 export default function Lessons({ sections }) {
   const courseInfo = getCourseConfig();
@@ -21,7 +12,15 @@ export default function Lessons({ sections }) {
     <>
       <Head>
         <title>{courseInfo.title}</title>
-        {/* TODO description */}
+        <meta name="description" content={courseInfo.description}></meta>
+        <meta name="keywords" content={courseInfo.keywords.join(",")}></meta>
+        <meta name="og:description" content={courseInfo.description}></meta>
+        <meta name="og:title" content={courseInfo.title}></meta>
+        <meta
+          name="og:image"
+          content={`${process.env.BASE_URL}/images/social-share-cover.jpg`}
+        ></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <div>
         <div className="jumbotron">
@@ -31,7 +30,11 @@ export default function Lessons({ sections }) {
               <h2>{courseInfo.subtitle}</h2>
               <div className="author">
                 <div className="image">
-                  <Image alt="author image" className="image" {...author} />
+                  <img
+                    src={`${process.env.BASE_URL}/images/author.jpg`}
+                    alt="author image"
+                    className="image"
+                  />
                 </div>
                 <div className="info">
                   <div className="name">{courseInfo.author.name}</div>
@@ -41,7 +44,10 @@ export default function Lessons({ sections }) {
             </div>
           </div>
           <div className="courseIcon">
-            <Image alt="course icon" {...courseIcon} />
+            <img
+              src={`${process.env.BASE_URL}/images/course-icon.png`}
+              alt="course icon"
+            />
           </div>
         </div>
         {courseInfo.frontendMastersLink ? (

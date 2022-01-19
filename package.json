@@ -5,13 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^12.0.8",
-    "front-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "highlight.js": "^11.4.0",
     "marked": "^4.0.9",
     "next": "^12.0.7",

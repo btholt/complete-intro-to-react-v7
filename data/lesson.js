@@ -1,11 +1,12 @@
 import path from "path";
 import fs from "fs/promises";
-import parseFrontMatter from "front-matter";
+import * as matter from "gray-matter";
 import { titleCase } from "title-case";
 import { marked } from "marked";
 import hljs from "highlight.js";
 
 marked.setOptions({
+  baseUrl: process.env.BASE_URL ? process.env.BASE_URL + "/" : "/",
   highlight: function (code, lang) {
     const language = hljs.getLanguage(lang) ? lang : "plaintext";
     return hljs.highlight(code, { language }).value;
@@ -88,7 +89,7 @@ export async function getLessons() {
       const filePath = path.join(lessonsPath, dirFilename, lessonFilename);
 
       const file = await fs.readFile(filePath);
-      const { attributes } = parseFrontMatter(file.toString());
+      const { data } = matter(file.toString());
       let slug = lessonFilename.replace(/\.md$/, "");
 
       const slugParts = slug.split("-");
@@ -96,7 +97,7 @@ export async function getLessons() {
 
       slug = slugParts.join("-");
 
-      const title = getTitle(slug, attributes.title);
+      const title = getTitle(slug, data.title);
 
       lessons.push({
         slug,
@@ -134,9 +135,9 @@ export async function getLesson(targetDir, targetFile) {
         if (slugPath.endsWith(targetFile + ".md")) {
           const filePath = path.join(lessonsPath, dirPath, slugPath);
           const file = await fs.readFile(filePath);
-          const { attributes, body } = parseFrontMatter(file.toString());
-          const html = marked(body);
-          const title = getTitle(targetFile, attributes.title);
+          const { data, content } = matter(file.toString());
+          const html = marked(content);
+          const title = getTitle(targetFile, data.title);
           const meta = await getMeta(dirPath);
 
           const section = getTitle(targetDir, meta.title);
@@ -186,16 +187,18 @@ export async function getLesson(targetDir, targetFile) {
             prevSlug = null;
           }
 
+          const base = process.env.BASE_URL ? process.env.BASE_URL : "/";
+
           return {
-            attributes,
+            attributes: data,
             html,
             slug: targetFile,
             title,
             section,
             icon,
             filePath,
-            nextSlug: nextSlug ? path.join("/lessons", nextSlug) : null,
-            prevSlug: prevSlug ? path.join("/lessons", prevSlug) : null,
+            nextSlug: nextSlug ? path.join(base, "lessons", nextSlug) : null,
+            prevSlug: prevSlug ? path.join(base, "lessons", prevSlug) : null,
           };
         }
       }
