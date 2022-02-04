@@ -24,10 +24,14 @@ const App = () => {
   ]);
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(React.createElement(App));
 ```
 
 > 🚨 You will be seeing a console warning `Warning: Each child in a list should have a unique "key" prop.` in your browser console. React's dev warnings are trying to help your code run faster. Basically React tries to keep track of components are swapped in order in a list and it does that by you giving it a unique key it can track. If it sees two things have swapped, it'll just move the components instead of re-rendering.
+
+Replace your `script` tag in your index.html that has all your code in it with `<script src="./App.js"></script>`. Leave the two React scripts.
 
 - To make an element have multiple children, just pass it an array of elements.
 - We created a second new component, the `Pet` component. This component represents one pet. When you have distinct ideas represented as markup, that's a good idea to separate that it into a component like we did here.
@@ -62,11 +66,13 @@ const App = () => {
   ]);
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(React.createElement(App));
 ```
 
 Now we have a more flexible component that accepts props from its parent. Props are variables that a parent (App) passes to its children (the instances of Pet.) Now each one can be different! Now that is far more useful than it was since this Pet component can represent not just Luna, but any Pet. This is the power of React! We can make multiple, re-usable components. We can then use these components to build larger components, which in turn make up yet-larger components. This is how React apps are made!
 
 > 🏁 [Click here to see the state of the project up until now: 01-no-frills-react][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/01-no-frills-react
+[step]: https://github.com/btholt/citr-v7-project/tree/master/01-no-frills-react

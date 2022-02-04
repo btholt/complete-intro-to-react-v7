@@ -9,7 +9,7 @@ Typically Parcel handles 100% of your Babel needs and you don't have to care at 
 One thing that Parcel 1 does (Parcel 2 whenever it comes out will work differently) is merge your config with their own. That means we only need to set up the one thing we need to change and leave the rest alone. Run the following command:
 
 ```bash
-npm install -D @babel/core@7.12.16 @babel/preset-react@7.12.13
+npm install -D @babel/preset-react@7.16.7
 ```
 
 You also need to install the core library from Babel if you're going to provide your own config. Don't worry, if you forget, Parcel will install it for you and update your package.json.
@@ -29,10 +29,13 @@ Create a file called `.babelrc` in your home directory and put this in there:
 }
 ```
 
-> Parcel 2 is coming (and has been coming for a long time.) Once v2 lands it will be very unlikely that these steps to configure will be necessary as I imagine the "automatic" config will be the default. [Check here][releases] to see what the latest releases are.
+> This has been fixed in Parcel 2. Because we're using a release candidate, Parcel isn't detecting the version correctly _yet_. It's been merged, just needs to be released. [See here][parcel2-issue]
 
-The one _additional_ thing we're setting up over what's in the project already is the `automatic` configuration for the JSX transformation. We'll talk about it in the next chapter, but it allows us to omit `import React from 'react'` at the top of every JSX file.
+The one _additional_ thing we're setting up over what's in the project already is the `automatic` configuration for the JSX transformation. We'll talk about it in the next chapter, but it allows us to omit `import React from 'react'` at the top of every JSX file. If you're using a stable React version or Parcel 2 has fixed this before you take this course (extremely likely it landes before I even get up and teach it) then you can totally ignore this section.
 
 If you needed to update a `preset-env` configuration (a semi-frequent occurrence) or add another transformation, you could do that here too.
 
+> You'll likely get an error from Parcel 2 telling you this it's redundant. It's not until they fix it.
+
 [releases]: https://github.com/parcel-bundler/parcel/releases
+[parcel2-issue]: https://github.com/parcel-bundler/parcel/pull/7642

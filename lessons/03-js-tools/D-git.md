@@ -8,7 +8,7 @@ If you haven't already, create a .gitignore at the root of your project to ignor
 
 ```
 node_modules
-.cache/
+.parcel-cache/
 dist/
 .env
 .DS_Store

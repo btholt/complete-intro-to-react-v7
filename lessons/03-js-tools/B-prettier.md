@@ -12,7 +12,7 @@ Prettier is a really fancy pretty printer. It takes the code you write, breaks i
 
 Need to tool around a bit with it before you trust it? [Go here][prettier-playground]. You can see how it works.
 
-Let's go integrate this into our project. It's _pretty_ easy (lol.)
+Let's go integrate this into our project. It's _pretty_ easy (since I'm a dad now, I'm legally obligated to make this joke.)
 
 Either install Prettier globally `npm install --global prettier` or replace when I run `prettier` with (from the root of your project) `npx prettier`. From there, run `prettier script.js`. This will output the formatted version of your file. If you want to actually write the file, run `prettier --write script.js`. Go check script.js and see it has been reformatted a bit. I will say for non-JSX React, prettier makes your code less readable. Luckily Prettier supports JSX! We'll get to that shortly.
 
@@ -26,7 +26,7 @@ So that our tool can know this is a Prettier project, we're going to create a fi
 
 So it can be painful to try to remember the various CLI commands to run on your project. You can put CLI commands into it and then run the name of the tag and it'll run that script. Let's go see how that works. Put the following into your package.json.
 
-First run `npm install -D prettier`. `-D` means it's for development only.
+First run `npm install -D prettier@2.5.1`. `-D` means it's for development only.
 
 ```json
 "scripts": {
