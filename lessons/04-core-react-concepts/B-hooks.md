@@ -69,7 +69,9 @@ const [location, updateLocation] = useState("Seattle, WA");
 - You can make your own custom hooks; `useState` is just one of many.
 - Historically, React has been written using `class`es with state being on the instance of the component. This is still a supported pattern in React. We'll see how to do it later.
 
-Let's add the ESLint rule. Run `npm install -D eslint-plugin-react-hooks@4.2.0`. Add this to ESLint:
+> I'm showing you how to do a "controlled form" in that we're using hooks to control each part of the form. In reality, it'd be better to leave these _uncontrolled_ (aka don't set the value) and wrap the whole thing in a form. Then we can listen for submit events and use that event to gather info off the form. This is less code and less burdensome to write. If you have a standard form sort of thing to write, do that an uncontrolled form. If you need to do dynamic validation, react to a user typing a la typeahead, or something of the ilk, then a controlled input is perfect, otherwise stick to uncontrolled.
+
+Let's add the ESLint rule. Run `npm install -D eslint-plugin-react-hooks@4.3.0`. Add this to ESLint:
 
 ```json
 {
@@ -141,7 +143,7 @@ const breeds = [];
 </label>;
 ```
 
-So now we have a breed dropdown. The only really new thing we did was use the `disabled` property to disable the dropdown when you don't have any breeds. We're going to use the Petfinder API to request breeds based on the animal selected. If you select `dog`, you want to see poodles, labradors, and chihuahuas and parrots, tabbies, and Maine coons. Petfinder has and endpoint that if you give it a valid animal. We'll show you how to do that in the next lesson with effects.
+So now we have a breed dropdown. The only really new thing we did was use the `disabled` property to disable the dropdown when you don't have any breeds. We're going to use the API to request breeds based on the animal selected. If you select `dog`, you want to see poodles, labradors, and chihuahuas and parrots, tabbies, and Maine coons. The API has and endpoint that if you give it a valid animal. We'll show you how to do that in the next lesson with effects.
 
 > 🏁 [Click here to see the state of the project up until now: 04-hooks][step]
 

@@ -36,7 +36,7 @@ async function requestPets() {
 }
 ```
 
-> 🚨 If you're seeing an error about regeneratorRuntime, please go back to the Browserslist lesson and make sure you followed that. If you have and it's still broke, please delete your node_modules, .cache, and dist directories, run `npm install` again, and try running `npm run dev` again.
+> 🚨 If you're seeing an error about regeneratorRuntime, please go back to the Browserslist lesson and make sure you followed that. If you have and it's still broke, please delete your node_modules, .parcel-cache, and dist directories, run `npm install` again, and try running `npm run dev` again.
 
 - We're taking advantage of closures here that if we define the requestPets function _inside_ of the render that it will have access to that scope and can use all the hooks there.
 - We could have actually put requestPets inside of the effect but we're going to use it again here in a sec with the submit button.

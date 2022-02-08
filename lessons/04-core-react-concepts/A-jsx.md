@@ -23,7 +23,7 @@ const Pet = (props) => {
 export default Pet;
 ```
 
-> 🚨 ESLint is currently failing. We'll fix it at the end.
+> 🚨 ESLint may be currently failing. We'll fix it at the end.
 
 I don't know about you, but I find this far more readable. And if it feels uncomfortable to you to introduce HTML into your JavaScript, I invite you to give it a shot until the end of the workshop. By then it should feel a bit more comfortable. And you can always go back to the old way.
 
@@ -38,7 +38,7 @@ Notice you still have to import React despite React not being explicitly used. R
 So now JSX is demystified a bit, let's go convert App.js.
 
 ```javascript
-import { render } from "react-dom";
+import { createRoot } from "react-dom";
 import Pet from "./Pet";
 
 const App = () => {
@@ -52,7 +52,9 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
 ```
 
 > 🚨 ESLint is currently failing. We'll fix it at the end.
@@ -65,7 +67,7 @@ We now pass props down as we add attributes to an HTML tag. Pretty cool.
 
 We need to give ESLint a hand to get it to recognize React and not yell about React not being used. Right now it thinks we're importing React and not using because it doesn't know what to do with React. Let's help it.
 
-Run this: `npm install -D eslint-plugin-import@2.22.1 eslint-plugin-jsx-a11y@6.4.1 eslint-plugin-react@7.22.0`
+Run this: `npm install -D eslint-plugin-import@2.25.4 eslint-plugin-jsx-a11y@6.5.1 eslint-plugin-react@7.28.0`
 
 Update your .eslintrc.json to:
 
@@ -76,8 +78,7 @@ Update your .eslintrc.json to:
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
   "rules": {
     "react/prop-types": 0,
@@ -85,7 +86,7 @@ Update your .eslintrc.json to:
   },
   "plugins": ["react", "import", "jsx-a11y"],
   "parserOptions": {
-    "ecmaVersion": 2021,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -104,6 +105,8 @@ Update your .eslintrc.json to:
 }
 ```
 
+> In previous versions of this course, we had to extend `prettier/react` as well as `prettier`. [As of version 8 of this plugin][prettier-react] it's all rolled into the `prettier` config.
+
 This is a little more complicated config than I used in previous versions of the workshop but this is what I use in my personal projects and what I'd recommend to you. In previous versions of this workshop, I used [airbnb][airbnb] and [standard][standard]. Feel free to check those out; I now find both of them a bit too prescriptive. Linting is a very opinionated subject, so feel free to explore what you like.
 
 This particular configuration has a lot of rules to help you quickly catch common bugs but otherwise leaves you to write code how you want.
@@ -113,6 +116,7 @@ This particular configuration has a lot of rules to help you quickly catch commo
 - react is mostly common React bugs like not calling one of your props children.
 - `eslint-plugin-react` now requires you to inform of it what version of React you're using. We're telling it here to look at the package.json to figure it out.
 - `"react/react-in-jsx-scope": 0` is new since you used to have to import React everywhere but now with the recent revision of React you don't need to.
+- Prop types are allow you to runtime type props to a component. In general if you're interested in doing that just use TypeScript.
 
 Now your project should pass lint.
 
@@ -121,3 +125,4 @@ Now your project should pass lint.
 [airbnb]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 [standard]: https://standardjs.com/
 [step]: https://github.com/btholt/citr-v6-project/tree/master/03-jsx
+[prettier-react]: https://github.com/prettier/eslint-config-prettier#installation
