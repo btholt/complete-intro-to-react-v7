@@ -1,8 +1,8 @@
 ---
-description: "One component should do one thing. Brian shows you how to break down bigger components into smaller components."
+description: "react-router is phenomenal tool is that allows you to manage browser navigation state in a very React way."
 ---
 
-> In previous versions of this course, I've taught various versions of [React Router][rr] as well as [Reach Router][reach]. It's all written by the same folks (same great people behind [Remix][remix]) but suffice to say it's a bit of a moving target. It's great software and you'll be well served by any of them. This course uses React Router v5 but aware React Router v6 is coming soon or maybe even be out by the time you read this. Reach Router is being folded back into React Router.
+> In previous versions of this course, I've taught various versions of [React Router][rr] as well as [Reach Router][reach]. It's all written by the same folks (same great people behind [Remix][remix], stay tuned for a Frontend Masters Remix course!) but suffice to say it's a bit of a moving target. It's great software and you'll be well served by any of them. This course uses React Router v6.
 
 React Router is by far the most popular client side router in the React community. It is mature, being used by big companies, and battle tested at large scales. It also has a lot of really cool capabilities, some of which we'll examine here.
 
@@ -18,60 +18,36 @@ const Details = () => {
 export default Details;
 ```
 
-Now the Results page is its own component. This makes it easy to bring in the router to be able to switch pages. Run `npm install react-router-dom@5.2.0`.
+Now the Results page is its own component. This makes it easy to bring in the router to be able to switch pages. Run `npm install react-router-dom@6.2.1`.
+
+> If you're getting a dependency error and it won't let you install it, add `--force` to override npm and install it anyway.
 
 Now we have two pages and the router available. Let's go make it ready to switch between the two. In `App.js`:
 
 ```javascript
 // at top
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Details from "./Details";
 
-// replace <SearchParams />
-<Router>
-  <Route path="/details/:id">
-    <Details />
-  </Route>
-  <Route path="/">
-    <SearchParams />
-  </Route>
-</Router>;
+// replace <SearchParams /> and <h1>Adopt Me!</h1>
+<BrowserRouter>
+  <h1>Adopt Me!</h1>
+  <Routes>
+    <Route path="/details/:id" element={<Details />} />
+    <Route path="/" element={<SearchParams />} />
+  </Routes>
+</BrowserRouter>;
 ```
+
+> If you're upset about the element prop vs children, [read their rationale here][element]
 
 Now we have the router working (but still have an issue)! Try navigating to http://localhost:1234/ and then to http://localhost:1234/details/1. Both should work … sort of!
 
 - React Router has a ton of features that we're not going to explain here. The docs do a great job.
 - The `:id` part is a variable. In `http://localhost:1234/details/1`, `1` would be the variable.
 - The killer feature of React Router is that it's really accessible. It manages things like focus so you don't have to. Pretty great.
-
-On the Details page, notice that both pages render. It has to do with how React Router does routes.
-
-- React Router will render all components that the path match.
-- React Router does partial matches. The URL `/teachers/jem/young` will match the paths `/`, `/teachers`, `/teachers/jem` and `/teachers/jem/young`. It will not match `/young`, `/jem/young`, or `/teachers/young`.
-
-So let's make it match only one path with a component called Switch.
-
-```javascript
-// replace react-router-dom import
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-// replace jsx
-<div>
-  <Router>
-    <h1>Adopt Me!</h1>
-    <Switch>
-      <Route path="/details/:id">
-        <Details />
-      </Route>
-      <Route path="/">
-        <SearchParams />
-      </Route>
-    </Switch>
-  </Router>
-</div>;
-```
-
-Now notice it only renders one page at a time.
+- If you're familiar with previous versions of React Router, quite a bit changed here. Gone is Switch, exact, and a load of other things. They broke a lot of things to bring in the best of Reach Router. It can be a slog to keep up with react-router's changes, but at the end of the day it's hard to argue they aren't improving quite a bit.
+- Previously this would have rendered both pages on the Details page because technically both pages match on a regex level. This changed with v6. Now it uses the same scoring system as Reach Router to pick the best route for each path. It's so much easier. I have yet to have any issue with it.
 
 So now let's make the two pages link to each other. Go to Pet.js.
 
@@ -106,13 +82,15 @@ Let's make the Adopt Me! header clickable too.
 
 ```javascript
 // import Link too
-import { Router, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // replace h1
 <header>
   <Link to="/">Adopt Me!</Link>
 </header>;
 ```
+
+> If you're getting a useHref error, make sure your `header` is _inside_ `<BrowserRouter>`
 
 Now if you click the header, it'll take you back to the Results page. Cool. Now let's round out the Details page.
 
@@ -123,3 +101,4 @@ Now if you click the header, it'll take you back to the Results page. Cool. Now 
 [rf]: https://twitter.com/ryanflorence
 [step]: https://github.com/btholt/citr-v6-project/tree/master/08-react-router
 [remix]: https://remix.run
+[element]: https://reactrouter.com/docs/en/v6/upgrading/v5#advantages-of-route-element

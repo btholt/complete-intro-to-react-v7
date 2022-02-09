@@ -43,10 +43,10 @@ export default Results;
 Now go back to SearchParams.js and put this:
 
 ```javascript
-// at top
+// at top, replace import from Pet.js
 import Results from "./Results";
 
-// under </form>, still inside the div
+// under </form>, still inside the div, replace { pets.map ... }
 <Results pets={pets} />;
 ```
 
@@ -79,7 +79,9 @@ const Pet = (props) => {
 export default Pet;
 ```
 
-Looks much better! The links don't go anywhere yet but we'll get there. We don't have a good loading experience yet though. Right now we just seem unresponsive. Using a new tool to React called Suspense we can make the DOM rendering wait until we finish loading our data, show a loader, and then once it finishes we can resume rendering it. This is coming soon; for now you would just keep track of a loading Boolean and then conditionally show your component or a loading spinner based on whether it was finished loading or not.
+Looks much better! The links don't go anywhere yet but we'll get there. We don't have a good loading experience yet though. Right now we just seem unresponsive. Using a new tool to React called Suspense we can make the DOM rendering wait until we finish loading our data, show a loader, and then once it finishes we can resume rendering it.
+
+The previous way you would have done this is just keep track of a boolean loading state as a hook and then conditionally shown UI based about that boolean. _Now_, with suspense, you throw a promise from within that component and React will catch that promise and _suspend_ that rendering and show a fallback while it waits for that rendering to complete. We'll see that in a bit.
 
 > 🏁 [Click here to see the state of the project up until now: 07-component-composition][step]
 

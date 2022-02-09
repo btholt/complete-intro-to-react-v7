@@ -22,15 +22,16 @@ Go to App.js and wrap `<App />` in the render call in `<StrictMode>`.
 // import at top
 import { StrictMode } from "react";
 
-// replace render
-render(
+// replace root.render
+root.render(
   <StrictMode>
     <App />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
 ```
 
 ## Dev Tools
 
-React has wonderful dev tools that the core team maintains. They're available for both Chromium-based browsers and Firefox. They let you do several things like explore your React app like a DOM tree, modify state and props on the fly to test things out, tease out performance problems, and programtically manipulate components. Definitely worth downloading now.
+React has wonderful dev tools that the core team maintains. They're available for both Chromium-based browsers and Firefox. They let you do several things like explore your React app like a DOM tree, modify state and props on the fly to test things out, tease out performance problems, and programtically manipulate components. Definitely worth downloading now. [See here][dev-tools] for links.
+
+[dev-tools]: https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-devtools-profiler

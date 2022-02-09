@@ -97,12 +97,20 @@ const [animal, updateAnimal] = useState("");
 // under the location label
 <label htmlFor="animal">
   Animal
-  <select
-    id="animal"
-    value={animal}
-    onChange={(e) => updateAnimal(e.target.value)}
-    onBlur={(e) => updateAnimal(e.target.value)}
-  >
+  <label htmlFor="animal">
+    Animal
+    <select
+      id="animal"
+      value={animal}
+      onChange={(e) => {
+        updateAnimal(e.target.value);
+        updateBreed("");
+      }}
+      onBlur={(e) => {
+        updateAnimal(e.target.value);
+        updateBreed("");
+      }}
+    >
     <option />
     {ANIMALS.map((animal) => (
       <option key={animal} value={animal}>
@@ -115,6 +123,7 @@ const [animal, updateAnimal] = useState("");
 
 - You can use `useState` as many times as you need for various pieces of state! Again, this is why ordering is important because React relies on `useState` to be called in strictly the same order every time so it can give you the same piece of state.
 - Similar to above. We're using `onChange` and `onBlur` because it makes it more accessible.
+- Whenever you set the animal to be a new animal, you have to clear out the breed. If you select a dog, then select a poodle, then select cat, it wouldn't make sense for you to search for a poodle cat. Hence you need to clear out breed when you select a new animal.
 
 Let's make a third dropdown so you can select a breed as well as an animal.
 
