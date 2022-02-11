@@ -54,5 +54,5 @@ const Modal = lazy(() => import("./Modal"));
 
 > 🏁 [Click here to see the state of the project up until now: code-splitting][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/code-splitting
-[app]: https://github.com/btholt/citr-v6-project/tree/master/12-portals-and-refs
+[step]: https://github.com/btholt/citr-v7-project/tree/master/code-splitting
+[app]: https://github.com/btholt/citr-v7-project/tree/master/12-portals-and-refs

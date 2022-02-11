@@ -23,5 +23,5 @@ In your package.json, add a new top level field called `browserslist` (notice th
 
 > 🏁 [Click here to see the state of the project up until now: 02-js-tools][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/02-js-tools
+[step]: https://github.com/btholt/citr-v7-project/tree/master/02-js-tools
 [dev]: https://browserslist.dev

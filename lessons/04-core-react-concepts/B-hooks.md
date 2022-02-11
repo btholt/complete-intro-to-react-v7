@@ -157,5 +157,5 @@ So now we have a breed dropdown. The only really new thing we did was use the `d
 > 🏁 [Click here to see the state of the project up until now: 04-hooks][step]
 
 [babel]: https://babeljs.io/
-[step]: https://github.com/btholt/citr-v6-project/tree/master/04-hooks
+[step]: https://github.com/btholt/citr-v7-project/tree/master/04-hooks
 [js-api]: https://developer.mozilla.org/en-US/docs/Web/API/Element/className

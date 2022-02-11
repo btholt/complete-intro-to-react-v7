@@ -92,7 +92,7 @@ if (this.state.redirect) {
 
 > 🏁 [Click here to see the state of the project up until now: 10-error-boundaries][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/10-error-boundaries
+[step]: https://github.com/btholt/citr-v7-project/tree/master/10-error-boundaries
 [azure]: https://azure.microsoft.com/en-us/services/monitor/?WT.mc_id=reactintro-github-brholt
 [sentry]: https://sentry.io/
 [trackjs]: https://trackjs.com/

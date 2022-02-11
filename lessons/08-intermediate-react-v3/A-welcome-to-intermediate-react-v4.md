@@ -17,4 +17,4 @@ Alright! Let's have some fun with Intermdiate React v3!
 
 [intro]: https://btholt.github.io/complete-intro-to-react-v6/intro
 [citr]: https://github.com/btholt/citr-v6-project/
-[project]: https://github.com/btholt/citr-v6-project/tree/master/12-portals-and-refs
+[project]: https://github.com/btholt/citr-v7-project/tree/master/12-portals-and-refs

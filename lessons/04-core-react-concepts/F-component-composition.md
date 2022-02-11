@@ -85,4 +85,4 @@ The previous way you would have done this is just keep track of a boolean loadin
 
 > 🏁 [Click here to see the state of the project up until now: 07-component-composition][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/07-component-composition
+[step]: https://github.com/btholt/citr-v7-project/tree/master/07-component-composition

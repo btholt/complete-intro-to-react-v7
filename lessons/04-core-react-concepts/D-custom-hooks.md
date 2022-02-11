@@ -60,4 +60,4 @@ That should be enough! Now you should have breeds being populated everything you
 
 > 🏁 [Click here to see the state of the project up until now: 06-custom-hooks][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/06-custom-hooks
+[step]: https://github.com/btholt/citr-v7-project/tree/master/06-custom-hooks

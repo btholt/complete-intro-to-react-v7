@@ -47,4 +47,4 @@ async function requestPets() {
 
 > 🏁 [Click here to see the state of the project up until now: 05-useeffect][step]
 
-[step]: https://github.com/btholt/citr-v6-project/tree/master/05-useeffect
+[step]: https://github.com/btholt/citr-v7-project/tree/master/05-useeffect
