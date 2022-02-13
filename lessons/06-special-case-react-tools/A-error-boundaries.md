@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Error boundaries allow you to catch errors coming out of a component and be able to react to that. This is great for areas where unexpected errors could arise like API calls or user generated content."
 ---
 
 Frequently there's errors with APIs with malformatted or otherwise weird data. Let's be defensive about this because we still want to use this API but we can't control when we get errors. We're going to use a feature called `componentDidCatch` to handle this. This is something you can't do with hooks so if you needed this sort of functionality you'd have to use a class component.
@@ -40,7 +40,7 @@ export default ErrorBoundary;
 
 - Now anything that is a child of this component will have errors caught here. Think of this like a catch block from try/catch.
 - A static method is one that can be called on the constructor. You'd call this method like this: `ErrorBoundary.getDerivedStateFromError(error)`. This method must be static.
-- If you want to call an error logging service, `componentDidCatch` would be an amazing place to do that. I can recommend [Azure Monitor][azure], [Sentry][sentry], and [TrackJS][trackjs].
+- If you want to call an error logging service, `componentDidCatch` would be an amazing place to do that. I can recommend [Sentry][sentry] and [TrackJS][trackjs].
 
 Let's go make Details use it. Go to Details.js
 
@@ -49,12 +49,10 @@ Let's go make Details use it. Go to Details.js
 import ErrorBoundary from "./ErrorBoundary";
 
 // replace export
-const DetailsWithRouter = withRouter(Details);
-
 export default function DetailsErrorBoundary(props) {
   return (
     <ErrorBoundary>
-      <DetailsWithRouter {...props} />
+      <DetailsParent {...props} />
     </ErrorBoundary>
   );
 }
@@ -67,7 +65,7 @@ Let's make it redirect automatically after five seconds. We could do a set timeo
 
 ```javascript
 // top
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 // add redirect
 state = { hasError: false, redirect: false };
@@ -81,19 +79,18 @@ componentDidUpdate() {
 
 // first thing inside render
 if (this.state.redirect) {
-  return <Redirect to="/" />;
+  return <Navigate to="/" />;
 } } else if (this.state.hasError) {
   …
 }
 ```
 
 - `componentDidUpdate` is how you react to state and prop changes with class components. In this case we're reacting to the state changing. You're also passed the previous state and props in the paremeters (which we didn't need) in case you want to detect what changed.
-- Rendering Redirect components is how you do redirects with React Router. You can also do it progamatically but I find this approach elegant.
+- Rendering Navigate components is how you do redirects with React Router. You can also do it progamatically but I find this approach elegant.
 
-> 🏁 [Click here to see the state of the project up until now: 10-error-boundaries][step]
+> 🏁 [Click here to see the state of the project up until now: 11-error-boundaries][step]
 
-[step]: https://github.com/btholt/citr-v7-project/tree/master/10-error-boundaries
-[azure]: https://azure.microsoft.com/en-us/services/monitor/?WT.mc_id=reactintro-github-brholt
+[step]: https://github.com/btholt/citr-v7-project/tree/master/11-error-boundaries
 [sentry]: https://sentry.io/
 [trackjs]: https://trackjs.com/
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
