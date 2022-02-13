@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Context allows you to share state across an entire app. While a powerful feature it has drawbacks which Brian discusses here."
 ---
 
 Historically I have not taught context when teaching React. This was for a couple reasons. First of all, the API they were using was still unofficial, however they standardized it in version 16. Secondly, normally you don't need context; React's state is enough. Thirdly, the old API was bad, in my opinion. The new one is pretty good.
@@ -36,7 +36,7 @@ import { StrictMode, useState } from "react";
 import ThemeContext from "./ThemeContext";
 
 // top of App function body
-const theme = useState("darkblue");
+const theme = useState("pink");
 
 // wrap the rest of the app
 <ThemeContext.Provider value={theme}>[…]</ThemeContext.Provider>;
@@ -61,26 +61,42 @@ const [theme] = useContext(ThemeContext);
 <button style={{ backgroundColor: theme }}>Submit</button>;
 ```
 
-- Now your button should be a beautiful shade of `darkblue`.
+- Now your button should be a beautiful shade of `pink`.
 - `useContext` is how you get the context data out of a given context (you can lots of various types of context in a given app.)
 - Right now it's just reading from it and a pretty silly use of context. But let's go make Details.js use it as well.
 
-Let's go do this in Details.js
+Let's go do this in Carousel.js
 
 ```javascript
 // import
 import ThemeContext from "./ThemeContext";
 
-// replace button
+// replace thumbnails loop
 <ThemeContext.Consumer>
   {([theme]) => (
-    <button style={{ backgroundColor: theme }}>Adopt {name}</button>
+    <>
+      {images.map((photo, index) => (
+        // eslint-disable-next-line
+        <img
+          onClick={this.handleIndexClick}
+          data-index={index}
+          key={photo}
+          src={photo}
+          className={index === active ? "active" : ""}
+          alt="animal thumbnail"
+          style={{
+            borderColor: theme,
+          }}
+        />
+      ))}
+    </>
   )}
 </ThemeContext.Consumer>;
 ```
 
 - This is how you use context inside of a class component.
 - Remember you cannot use hooks inside class components at all. This is why we're using the `Consumer` from `ThemeContext`. Functionally this works the same way though.
+- The `<> </>` is just shorthand for `React.Fragment` and you totally rewrite that as `<React.Fragment></React.Fragment>` if that's clearer for you. It just means you're going to return multiple top level components instead of one top level element.
 
 Lastly let's go make the theme changeable. Head back to SearchParams.js.
 
@@ -96,8 +112,8 @@ const [theme, setTheme] = useContext(ThemeContext);
     onChange={(e) => setTheme(e.target.value)}
     onBlur={(e) => setTheme(e.target.value)}
   >
+    <option value="pink">Pink</option>
     <option value="peru">Peru</option>
-    <option value="darkblue">Dark Blue</option>
     <option value="chartreuse">Chartreuse</option>
     <option value="mediumorchid">Medium Orchid</option>
   </select>
@@ -110,7 +126,7 @@ const [theme, setTheme] = useContext(ThemeContext);
 
 That's it for context! Something like theming would be perfect for context. It's for app-level data. Everything else should be boring-ol' state.
 
-> 🏁 [Click here to see the state of the project up until now: 11-context][step]
+> 🏁 [Click here to see the state of the project up until now: 12-context][step]
 
-[step]: https://github.com/btholt/citr-v7-project/tree/master/11-context
+[step]: https://github.com/btholt/citr-v7-project/tree/master/12-context
 [v4]: https://btholt.github.io/complete-intro-to-react-v4/context
