@@ -97,11 +97,11 @@ Once you've done all this, your code will actually be populated with real animal
 
 You should deploy your code to the cloud and tweet it at me! Great options for places for you to deploy include:
 
-- [Azure Static Web Apps][swa] (I'm biased, I work here)
-- [Google Firebase][gcp]
-- [AWS Amplify][aws]
 - [Netlify][netlify]
 - [Vercel][vercel]
+- [Azure Static Web Apps][swa]
+- [Google Firebase][gcp]
+- [AWS Amplify][aws]
 
 ## Use the Theme Selector in More Places
 

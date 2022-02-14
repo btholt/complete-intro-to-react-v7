@@ -48,7 +48,7 @@ So if we type in our input and it re-renders, what gets out in the `input` tag? 
 import { useState } from "react";
 
 // replace location
-const [location, updateLocation] = useState("Seattle, WA");
+const [location, updateLocation] = useState("");
 
 // replace input
 <input
@@ -63,7 +63,7 @@ const [location, updateLocation] = useState("Seattle, WA");
 - A hook called such (in my head) because it's a hook that gets caught every time the render function gets called. Because the hooks get called in the same order every single time, they'll always point to the same piece of state. Because of that they can be stateful: you can keep pieces of mutable state using hooks and then modify them later using their provided updater functions.
 - An _absolutely key_ concept for you to grasp is hooks rely on this strict ordering. As such, **do not put hooks inside if statements or loops**. If you do, you'll have insane bugs that involve `useState` returning _the wrong state_. If you see `useState` returning the wrong piece of state, this is likely what you did.
 - Because the previous point is so absolutely critical, the React team has provided us with a lint rule that help us not fall into that trap. That lint rule relies on us, the developers, to follow the convention of calling our hooks `useXxxxxx`. If you're willing to do that, the lint rules will guard you from calling the hooks out of order.
-- The argument given to `useState` is the default value. In our case, we gave it `"Seattle, WA"` as our default value.
+- The argument given to `useState` is the default value. In our case, we could give it `"Seattle, WA"` as our default value but let's give it a default empty string value.
 - `useState` returns to us an array with two things in it: the current value of that state and a function to update that function. We're using a feature of JavaScript called destructuring to get both of those things out of the array.
 - We use the `updateLocation` function in the `onChange` attribute of the input. Every time the input is typed into, it's going to call that function which calls `updateLocation` with what has been typed into the input. When `updateLocation` is called, React knows that its state has been modified and kicks off a re-render.
 - You can make your own custom hooks; `useState` is just one of many.

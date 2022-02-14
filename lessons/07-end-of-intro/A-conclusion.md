@@ -1,5 +1,5 @@
 ---
-description: "A quick note and congratulations from Brian for completing the Complete Intro to React v6!"
+description: "A quick note and congratulations from Brian for completing the Complete Intro to React v7!"
 ---
 
 This concludes our intro to React! You know now nearly every feature of the React core library (there are a few more but are rarely needed.) What makes React wonderful is not only the core library itself but the ecosystem around. Indeed, the ecosystem around it is as much a reason to learn React as React itself.

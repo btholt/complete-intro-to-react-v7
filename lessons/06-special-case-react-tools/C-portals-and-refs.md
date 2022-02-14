@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Portals allow you to render to a place outside of a component from within a component. Think of a contextual nav bar or side nav."
 ---
 
 Another nice feature React is something called a Portal. You can think of the portal as a separate mount point (the actual DOM node which your app is put into) for your React app. A common use case for this is going to be doing modals. You'll have your normal app with its normal mount point and then you can also put different content into a separate mount point (like a modal or a contextual nav bar) directly from a component. Pretty cool!
@@ -47,33 +47,24 @@ Now go to Details.js and add:
 
 ```javascript
 // at the top
+import { Suspense, useState } from "react";
 import Modal from "./Modal";
 
 // add showModal
-state = { loading: true, showModal: false };
-
-// above render
-toggleModal = () => this.setState({ showModal: !this.state.showModal });
-adopt = () => (window.location = "http://bit.ly/pet-adopt");
-
-// add showModal
-const { animal, breed, city, state, description, name, images, showModal } =
-  this.state;
+const [showModal, setShowModal] = useState(false);
 
 // add onClick to <button>
-<button onClick={this.toggleModal} style={{ backgroundColor: theme }}>
-  Adopt {name}
-</button>;
+<button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>;
 
 // below description
 {
   showModal ? (
     <Modal>
       <div>
-        <h1>Would you like to adopt {name}?</h1>
+        <h1>Would you like to adopt {pet.name}?</h1>
         <div className="buttons">
-          <button onClick={this.adopt}>Yes</button>
-          <button onClick={this.toggleModal}>No</button>
+          <a href="https://bit.ly/pet-adopt">Yes</a>
+          <button onClick={() => setShowModal(false)}>No</button>
         </div>
       </div>
     </Modal>
@@ -81,12 +72,11 @@ const { animal, breed, city, state, description, name, images, showModal } =
 }
 ```
 
-- We're using a simple `window.location` redirect since we're heading off site. This is bad accessibility so you should be extra cautious when doing this. The button should be an `<a>` tag but I wanted to show you how to do it. But now if you click Yes on the adopt modal it'll take you to the page when you actually can adopt a pet!
-- Notice that despite we're rendering a whole different part of the DOM we're still referencing the state in Details.js. This is the magic of Portals. You can use state but render in different parts of the DOM. Imagine a sidebar with contextual navigation. Or a contextual footer. It opens up a lot of cool possibilities.
+Notice that despite we're rendering a whole different part of the DOM we're still referencing the state in Details.js. This is the magic of Portals. You can use state but render in different parts of the DOM. Imagine a sidebar with contextual navigation. Or a contextual footer. It opens up a lot of cool possibilities. React Router has some cool features built into that take advantage of this as well.
 
 That's it! That's how you make a modal using a portal in React. This used to be significantly more difficult to do but with portals it became trivial. The nice thing about portals is that despite the actual elements being in different DOM trees, these are in the same React trees, so you can do event bubbling up from the modal. Some times this is useful if you want to make your Modal more flexible (like we did.)
 
-> 🏁 [Click here to see the state of the project up until now: 12-portals-and-refs][step]
+> 🏁 [Click here to see the state of the project up until now: 13-portals-and-refs][step]
 
 [portal]: https://reactjs.org/docs/portals.html
-[step]: https://github.com/btholt/citr-v7-project/tree/master/12-portals-and-refs
+[step]: https://github.com/btholt/citr-v7-project/tree/master/13-portals-and-refs

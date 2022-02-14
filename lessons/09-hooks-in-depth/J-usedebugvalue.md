@@ -11,4 +11,4 @@ useDebugValue allows you to surface information from your custom hook into the d
 
 Normally you'd just use the developer tools built into the browser but CodeSandbox has the dev tools built directly into it. Just know that normally you'd use the browser extension.
 
-[debug-value]: https://codesandbox.io/s/github/btholt/react-hooks-examples-v3/tree/master/?module=%2Fsrc%2FDebugValue.js
+[debug-value]: https://codesandbox.io/s/github/btholt/react-hooks-examples-v4/tree/main?file=/src/DebugValue.js
