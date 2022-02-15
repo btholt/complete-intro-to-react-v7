@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Tailwind CSS works differently than you may expect for styling your page. Brian starts to dig into it with you."
 ---
 
 I'm going to need you to suspend everything you know about CSS best practices for this section. At the start this going to feel gross and weird. But stick with me. I initially had similar feelings towards React too.
@@ -50,7 +50,7 @@ Let's hop over to `SearchResults.js` (we're only doing SearchParams, I'll leave 
 ```javascript
 <div className="my-0 mx-auto w-11/12">
   <form
-    className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center divide-y divide-gray-900"
+    className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center"
     onSubmit={(e) => {
       e.preventDefault();
       requestPets();
@@ -64,4 +64,3 @@ Let's hop over to `SearchResults.js` (we're only doing SearchParams, I'll leave 
 - `rounded-lg` is a "large" rounding of the corners i.e. border-radius.
 - `shadow-lg` is a "large" border shadow.
 - `flex` makes the display mode flex. `flex-col` makes it columns. `justify-center` makes it justify-content center. `items-center` makes it `align-items: center`. Net result is that you have centered horizontally and vertically items in a vertical direction.
-- `divide-y` is pretty cool. It puts nice dividing lines between all the children elements in the div. `divide-gray-900` means they're black lines.

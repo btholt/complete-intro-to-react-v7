@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Lastly, Brian helps you redo the Pet component with Tailwind CSS to show how you can do easy reposition of elements."
 ---
 
 Let's make Pet.js look great with a nice little overlay of their name, animal, breed, and location. Replace the returned markup with:
@@ -24,6 +24,6 @@ Let's make Pet.js look great with a nice little overlay of their name, animal, b
 
 > 🚨 We did not do Details.js. I leave this as an exercise to you!
 
-> 🏁 [Click here to see the state of the project up until now: tailwind][step]
+> 🏁 [Click here to see the state of the project up until now: tailwindcss][step]
 
-[step]: https://github.com/btholt/citr-v7-project/tree/master/tailwind
+[step]: https://github.com/btholt/citr-v7-project/tree/master/tailwindcss

@@ -1,5 +1,5 @@
 ---
-description: ""
+description: "Brian teaches you to set up the latest hotness in CSS for large scale projects, Tailwind CSS."
 ---
 
 There are many ways to do CSS with React. Even just in this course I've done several ways with [style-components][sc] and [emotion][emotion]. Both of those are fantastic pieces of software and could definitely still be used today. As is the case when I teach this course I try to cover the latest material and what I think is the current state-of-the-art of the industry and today I think that is [TailwindCSS][tailwind].
@@ -11,7 +11,7 @@ Tailwind however is a different approach to this. And it bears mentioning that T
 Let's get it set up. Run this:
 
 ```bash
-npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat@2.0.3 postcss@7.0.35 autoprefixer@9.8.6 @tailwindcss/postcss7-compat@2.0.3
+npm i -D tailwindcss@3.0.22 postcss@8.4.6 autoprefixer@10.4.2
 ```
 
 - Under the hood, Parcel processes all your CSS with PostCSS with the autoprefixer plugin. This works like Babel: it means you can write modern code and it'll make it backwards compatible with older browsers. Since we're modifying the PostCSS config (like we did with Babel earlier in this project in the Intro part) we have to give it the whole config now.
@@ -21,8 +21,8 @@ Okay, now let's get our Tailwind project going. Run `npx tailwindcss init`. Like
 
 ```javascript
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  mode: "jit",
+  content: ["./src/*.{html,js}"],
   theme: {
     extend: {},
   },
@@ -54,6 +54,7 @@ Lastly, we have to create `.postcssrc` in root directory.
     "tailwindcss": {}
   }
 }
+```
 
 Now if you run your app you should the React app (and all the functionality should work) but it won't have any style. We're going to quickly restyle this whole app to show you how great Tailwind is and how quickly it lets you go.
 
@@ -61,4 +62,3 @@ Now if you run your app you should the React app (and all the functionality shou
 [sc]: https://btholt.github.io/complete-intro-to-react/
 [emotion]: https://btholt.github.io/complete-intro-to-react-v5/emotion
 [tailwind]: https://tailwindcss.com/docs
-```

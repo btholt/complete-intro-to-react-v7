@@ -1,10 +1,10 @@
 ---
-description: ""
+description: "Tailwind CSS has the ability to add plugins to augment its functionality. Brian helps you add the most common plugin, the one for forms."
 ---
 
 Our inputs look really gross. We could write our own components (basically reusable CSS classes, what a novel idea) but we're just going to use the good ones that Tailwind provides out of the box.
 
-Run `npm install -D @tailwindcss/forms@0.2.1`.
+Run `npm install -D @tailwindcss/forms@0.4.0`.
 
 Put this into your tailwind.config.js
 
@@ -19,20 +19,11 @@ Notice our location input still looks bad. With this plugin they (probably wisel
 
 Let's finish making SearchParams looks nice.
 
-To each of the selects and inputs, add `className="w-60"` so they have a nice uniform width.
+To each of the selects and inputs, add `className="w-60 mb-5 block"` so they have a nice uniform look.
 
-To the breed selector, we want it to be grayed out when it's not available to use. However the PostCSS 7 version of Tailwind doesn't work with the `disabled:<style>` class (new versions do.) So add this to your tailwind.config.js config.
+To the breed selector, we want it to be grayed out when it's not available to use.
 
-```javascript
-//replace variants
-variants: {
-  opacity: ({ after }) => after(["disabled"]),
-},
-```
-
-This will allow our specific use case. Again, don't dig too much into this because once Parcel 2 lands or you whenever you're using PostCSS 8 this isn't a big deal.
-
-Now add `className="w-60 disabled:opacity-50"` to the breed `<select>`.
+Now add `className="w-60 mb-5 block disabled:opacity-50"` to the breed `<select>`.
 
 Replace the button with:
 
