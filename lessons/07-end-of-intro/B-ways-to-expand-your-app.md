@@ -115,6 +115,10 @@ Right now we don't have a great navigation story for our little pet finding app.
 
 I showed you how to use Parcel but consider trying one of the newer build systems like [Vite], [Snowpack], [ESBuild], or any of the others. You could also use one of the popular mainstays like [Webpack][webpack] or [Rollup][rollup].
 
+## Try React 18!
+
+I really wanted to teach React 18 for this course but it's just not out yet and it could change. However you could give it a shot! [See here to get started][r18]
+
 ## Let me know
 
 Please! Let's share all the great apps we make here so we can provide inspirations for others and get some high fives on the cool work we do.
@@ -131,3 +135,4 @@ Please! Let's share all the great apps we make here so we can provide inspiratio
 [esbuild]: https://esbuild.github.io/
 [webpack]: https://webpack.js.org/
 [rollup]: https://www.rollupjs.org/guide/en/
+[r18]: https://github.com/reactwg/react-18/discussions/112

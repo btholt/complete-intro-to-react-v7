@@ -48,14 +48,15 @@ Let's go make Details use it. Go to Details.js
 // add import
 import ErrorBoundary from "./ErrorBoundary";
 
-// replace export
-export default function DetailsErrorBoundary(props) {
+// replace WrappedDetails
+const WrappedDetails = () => {
+  const params = useParams();
   return (
     <ErrorBoundary>
-      <DetailsParent {...props} />
+      <Details params={params} />
     </ErrorBoundary>
   );
-}
+};
 ```
 
 - Now this is totally self contained. No one rendering Details has to know that it has its own error boundary. I'll let you decide if you like this pattern or if you would have preferred doing this in App.js at the Router level. Differing opinions exist.
@@ -88,9 +89,9 @@ if (this.state.redirect) {
 - `componentDidUpdate` is how you react to state and prop changes with class components. In this case we're reacting to the state changing. You're also passed the previous state and props in the paremeters (which we didn't need) in case you want to detect what changed.
 - Rendering Navigate components is how you do redirects with React Router. You can also do it progamatically but I find this approach elegant.
 
-> 🏁 [Click here to see the state of the project up until now: 11-error-boundaries][step]
+> 🏁 [Click here to see the state of the project up until now: 10-error-boundaries][step]
 
-[step]: https://github.com/btholt/citr-v7-project/tree/master/11-error-boundaries
+[step]: https://github.com/btholt/citr-v7-project/tree/master/10-error-boundaries
 [sentry]: https://sentry.io/
 [trackjs]: https://trackjs.com/
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
