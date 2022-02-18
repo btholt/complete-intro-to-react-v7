@@ -22,12 +22,17 @@ Go to App.js and wrap `<App />` in the render call in `<StrictMode>`.
 // import at top
 import { StrictMode } from "react";
 
-// replace root.render
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+// replace App
+const App = () => {
+  return (
+    <StrictMode>
+      <div>
+        <h1>Adopt Me!</h1>
+        <SearchParams />
+      </div>
+    </StrictMode>
+  );
+};
 ```
 
 ## Dev Tools

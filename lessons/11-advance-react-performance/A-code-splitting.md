@@ -40,7 +40,7 @@ Refactor Details.js to be.
 
 ```javascript
 // import lazy
-import { Component, lazy } from "react";
+import { Suspense, useState, lazy } from "react";
 
 // delete Modal import
 

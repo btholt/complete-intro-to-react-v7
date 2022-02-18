@@ -26,9 +26,9 @@ So how does it work? We gave the entry point, which is index.html. It then reads
 
 First let's fix the React and ReactDOM dependencies. Right now these are coming from unpkg.com. Unpkg isn't meant to serve production traffic, nor do we want the burden of loading _all_ of our future dependencies this way. Believe me, it would get messy quickly and we'd have to make a million requests to get all of them by the end (we'll install more later as we go.) Instead, it'd be better if we could pull our dependencies down from npm and include it in our bundle. Let's do that now.
 
-Run `npm install react@18.0.0-rc.0 react-dom@18.0.0-rc.0`. This will pull React and ReactDOM down from npm and put it in your node_modules directory. Now instead of loading them from unpkg, we can tell Parcel to include them in your main bundle. Let's do that now.
+Run `npm install react@17.0.2 react-dom@17.0.2`. This will pull React and ReactDOM down from npm and put it in your node_modules directory. Now instead of loading them from unpkg, we can tell Parcel to include them in your main bundle. Let's do that now.
 
-> As of writing, only the release candidate of React v18 is out. You may check to see if the actual release out (nothing should have changed between the rc and the actual release.)
+> As of writing, only the release candidate of React v18 is out. You may check to see if the actual release out (nothing should have changed between the rc and the actual release.) This course will focus on v17.
 
 Delete the two unpkg script tags in index.html. Replace the App.js import with `<script type="module" src="./App.js"></script>`. This is how Parcel knows that we're using the latest JS.
 

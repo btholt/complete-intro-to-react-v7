@@ -38,7 +38,7 @@ Notice you still have to import React despite React not being explicitly used. R
 So now JSX is demystified a bit, let's go convert App.js.
 
 ```javascript
-import { createRoot } from "react-dom";
+import { render } from "react-dom";
 import Pet from "./Pet";
 
 const App = () => {
@@ -52,9 +52,7 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+render(<App />, document.getElementById("root"));
 ```
 
 > 🚨 ESLint is currently failing. We'll fix it at the end.

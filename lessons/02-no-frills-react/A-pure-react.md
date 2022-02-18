@@ -20,8 +20,8 @@ Let's start your project. Create your project directory. I'm going to call mine 
 
 <body>
   <div id="root">not rendered</div>
-  <script src="https://unpkg.com/react@18.0.0-rc.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18.0.0-rc.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
   <script>
     // Your code is going to go here
   </script>
@@ -30,7 +30,7 @@ Let's start your project. Create your project directory. I'm going to call mine 
 </html>
 ```
 
-> What's new between React 17 and React 18? A few things, here and there, but almost entirely additive and few things to change. We'll cover them over the arc of this course.
+> React version 18 is just around the corner but they still haven't settled on the correct APIs yet. As this is meant to be a practical course, I'm going to teach you what's useful today and get you ready to write what's best practices now. When version 18 comes out we'll release a revised version with best practices for version 18.
 
 Now open this file in your browser. On Mac, hit ⌘ (command) + O in your favorite browser, and on Windows and Linux hit CTRL + O to open the Open prompt. Navigate to wherever you saved the file and open it. You should see a line of text saying "not rendered".
 
@@ -54,9 +54,7 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
-root.render(React.createElement(App));
+ReactDOM.render(React.createElement(App), document.getElementById("root"));
 ```
 
 This is about the simplest React app you can build.
@@ -68,10 +66,10 @@ This is about the simplest React app you can build.
 - Inside of the render function, you cannot modify any sort of state. Put in functional terms, this function must be pure. You don't know how or when the function will be called so it can't modify any ambient state.
 - `React.createElement` creates one _instance_ of some component. If you pass it a _string_, it will create a DOM tag with that as the string. We used `h1` and `div`, those tags are output to the DOM. If we put `x-custom-date-picker`, it'll output that (so web components are possible too.)
 - The second empty object (you can put `null` too) is attributes we're passing to the tag or component. Whatever we put in this will be output to the element (like id or style.)
-- First we're using `document.getElementById` to grab an existing div out of the HTML document. Then we take that element (which we called `container`) and pass that into `ReactDOM.createRoot`. This is how we signal to React where we want it to render our app. Note later we can can `root.render` again to change what the root of our React app looks like (I rarely need to do that.)
-- Notice we're using `React.createElement` with `App` as a parameter to `root.render`. We need an _instance_ of `App` to render out. `App` is a class of components and we need to render one instance of a class. That's what `React.createElement` does: it makes an instance of a class. An analogy is that `App` as a _class_ of components is like Honda has a line of cars called Civics. It's a whole line of cars with various different options and parameters. An _instance_ of a Civic would be one individual car. It's a concrete instance of the Civic car line.
+- First we're using `document.getElementById` to grab an existing div out of the HTML document. Then we take that element (which we called `container`) and pass that into `ReactDOM.render`. This is how we signal to React where we want it to render our app. Note later we can can `ReactDOM.render` again to change what the root of our React app looks like (I rarely need to do that.)
+- Notice we're using `React.createElement` with `App` as a parameter to `ReactDOM.render`. We need an _instance_ of `App` to render out. `App` is a class of components and we need to render one instance of a class. That's what `React.createElement` does: it makes an instance of a class. An analogy is that `App` as a _class_ of components is like Honda has a line of cars called Civics. It's a whole line of cars with various different options and parameters. An _instance_ of a Civic would be one individual car. It's a concrete instance of the Civic car line.
 
-> ReactDOM.createRoot is a new API as of React v18. The old `ReactDOM.render` is still available (and deprecated) but it'll render your app in "legacy" mode which won't use all the fun new features packed into React v18
+> ReactDOM.createRoot is a new API as of React v18. The old `ReactDOM.render` that we're using here is still available (but will be deprecated) in v18, you'll just need to update it to opt into future features in v18 (whenever that gets released.)
 
 [webdev]: https://frontendmasters.com/courses/web-development-v2/
 [style]: https://raw.githubusercontent.com/btholt/citr-v7-project/master/01-no-frills-react/src/style.css

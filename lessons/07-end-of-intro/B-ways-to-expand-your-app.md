@@ -119,8 +119,6 @@ I showed you how to use Parcel but consider trying one of the newer build system
 
 Please! Let's share all the great apps we make here so we can provide inspirations for others and get some high fives on the cool work we do.
 
-If you have a cool project you're particularly proud of, open a PR on this repo so that we all can see it! [Community repo][comm].
-
 [pf]: https://www.petfinder.com/developers/
 [pf-sdk]: https://github.com/petfinder-com/petfinder-js-sdk
 [swa]: https://azure.microsoft.com/en-us/services/app-service/static/
@@ -133,4 +131,3 @@ If you have a cool project you're particularly proud of, open a PR on this repo 
 [esbuild]: https://esbuild.github.io/
 [webpack]: https://webpack.js.org/
 [rollup]: https://www.rollupjs.org/guide/en/
-[comm]: https://github.com/btholt/citrv6-community
