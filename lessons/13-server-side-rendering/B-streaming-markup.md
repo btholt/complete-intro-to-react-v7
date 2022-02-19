@@ -15,9 +15,8 @@ import { renderToNodeStream } from "react-dom/server";
 // replace app.use call
 app.use((req, res) => {
   res.write(parts[0]);
-  const staticContext = {};
   const reactMarkup = (
-    <StaticRouter url={req.url} context={staticContext}>
+    <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
   );
@@ -25,7 +24,6 @@ app.use((req, res) => {
   const stream = renderToNodeStream(reactMarkup);
   stream.pipe(res, { end: false });
   stream.on("end", () => {
-    res.status(staticContext.statusCode || 200);
     res.write(parts[1]);
     res.end();
   });

@@ -15,7 +15,7 @@ npm i -D tailwindcss@3.0.22 postcss@8.4.6 autoprefixer@10.4.2
 ```
 
 - Under the hood, Parcel processes all your CSS with PostCSS with the autoprefixer plugin. This works like Babel: it means you can write modern code and it'll make it backwards compatible with older browsers. Since we're modifying the PostCSS config (like we did with Babel earlier in this project in the Intro part) we have to give it the whole config now.
-- We're using Parcel 1 in this project. They're heads-down on making Parcel 2 a reality which supports PostCSS 8. Parcel 1 is stuck on PostCSS 7. Tailwind 2 requires PostCSS 8 but luckily they provide a compatibility library with PostCSS 7. That's what `npm:@tailwindcss/postcss7-compat@2.0.3` is doing: it's called an alias. We're installing `@tailwindcss/postcss7-compat` and then aliasing it to `tailwindcss`. If you're brave you could try upgrading to Parcel 2 and then this wouldn't be necessary.
+- Parcel 1 required a lot more effort to get up and running with Tailwind. Luckily with Parcel 2 it just works!
 
 Okay, now let's get our Tailwind project going. Run `npx tailwindcss init`. Like `tsc init` for TypeScript, this will spit out a basic starting config in tailwind.config.js. Should look like
 
