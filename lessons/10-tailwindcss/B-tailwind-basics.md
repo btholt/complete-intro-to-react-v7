@@ -45,7 +45,7 @@ Let's do the whole header now.
 - `hover:<stuff>` is how we do hover, focus, disabled, etc. It takes whatever is on the right and only applies it only when that state is true. (note: disabled doesn't work without some magic in our PostCSS 7 compat layer. We'll do that in a bit.)
 - Note: `<Link>` from react-router-dom will pass styles and classes down to the resulting `<a>` for you.
 
-Let's hop over to `SearchResults.js` (we're only doing SearchParams, I'll leave it to you to fix Details)
+Let's hop over to `SearchParams.js` (we're only doing `SearchParams.js`, I'll leave it to you to fix `Details.js`)
 
 ```javascript
 <div className="my-0 mx-auto w-11/12">
