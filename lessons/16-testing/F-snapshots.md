@@ -2,17 +2,21 @@
 description: ""
 ---
 
-I'm not a fan of seeking 100% test coverage. I think it's a fool's errand and a waste of time. I'd rather you write five tests that cover the most important part of your code than see you write one test for five less-important pieces of UI code.
+I'm not a fan of seeking 100% test coverage. I think it's a fool's errand and a waste of time. I'd rather you write five tests that cover the most important five lines of your code than see you write one test for five less-important pieces of UI code.
 
 But let's show you an easy way to cheat and get there! Let's talk about snapshot testing.
 
 Snapshot tests are low confidence, low cost ways of writing tests. With more-or-less a single line of code you can assert: this code doesn't break, and it isn't changing over time.
 
-First we need to grab a test renderer so we can render out these snapshots. The React team makes an official one so grab it here: `npm install -D react-test-renderer@17.0.1`.
+First we need to grab a test renderer so we can render out these snapshots. The React team makes an official one so grab it here: `npm install -D react-test-renderer@17.0.2`.
 
 Let's test Results.js. It's a pretty stable component that doesn't do a lot. A low cost, low confidence test could fit here. Make a file called Results.test.js
 
 ```javascript
+/**
+ * @jest-environment jsdom
+ */
+
 import { expect, test } from "@jest/globals";
 import { create } from "react-test-renderer";
 import Results from "../Results";
@@ -23,13 +27,13 @@ test("renders correctly with no pets", () => {
 });
 ```
 
-Run this to see Jest say it created a snapshot. Go look now at Results.test.js.snap to see what it created. You can see it's just rendering out what it would look like. Now if you modify Results.js it will fail the test. As you can see, it's a quick gut check to make sure your changes don't have cascading problems. If I modify App.js and it causes this to fail it means I can catch it and validate quickly. Some people don't find it useful (I'm not entirely sold on it to be honest;at most these should be used very sparingly.)
+Run this to see Jest say it created a snapshot. Go look now at Results.test.js.snap to see what it created. You can see it's just rendering out what it would look like. Now if you modify Results.js it will fail the test. As you can see, it's a quick gut check to make sure your changes don't have cascading problems. If I modify App.js and it causes this to fail it means I can catch it and validate quickly. Some people don't find it useful (I'm not entirely sold on it to be honest; at most these should be used very sparingly.)
 
 Let's add some pets and see how it does.
 
 ```javascript
 // import
-import { StaticRouter } from "react-router";
+import { StaticRouter } from "react-router-dom/server";
 
 // sample
 const pets = [
@@ -167,6 +171,8 @@ This works, and now you can stick with this, but here's a problem. If you look a
 ```javascript
 // top
 import { createRenderer } from "react-test-renderer/shallow";
+
+// delete staticrouter import
 
 // replace second test
 test("renders correctly with some pets", () => {

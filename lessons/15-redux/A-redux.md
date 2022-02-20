@@ -25,7 +25,7 @@ Okay, let's get started. React state management is pretty simple: call setState 
 
 So what was one step became several. But each step of this is testable, and that's great. And it's explicit and verbose. It's long to follow, but it's an easy breadcrumb trailer to follow when things go awry. So let's start writing it:
 
-Run `npm install redux@4.0.5 react-redux@7.2.2`. Create store.js and put in it:
+Run `npm install redux@4.1.2 react-redux@7.2.6`. Create store.js and put in it:
 
 ```javascript
 import { createStore } from "redux";

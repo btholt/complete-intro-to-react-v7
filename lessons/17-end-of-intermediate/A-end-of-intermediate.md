@@ -10,4 +10,4 @@ Thanks again and I'll see you [back on Frontend Masters!][fem]!
 
 [fem]: https://frontendmasters.com/teachers/brian-holt/
 [holtbt]: https://twitter.com/holtbt
-[star]: https://github.com/btholt/complete-intro-to-react-v6
+[star]: https://github.com/btholt/complete-intro-to-react-v7

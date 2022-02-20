@@ -12,9 +12,9 @@ First we'll start with [Jest][jest]. Jest is the testing framework that Facebook
 
 It's useful to know that Jest is built on top of [Jasmine][jasmine]. Jasmine does the underlying testing part while Jest is the high level runner of the tests. Sometimes it's useful to consult the Jasmine docs too.
 
-Run `npm install -D jest@26.6.3 @testing-library/react@11.2.5`.
+Run `npm install -D jest@27.5.1 @testing-library/react@12.1.3`.
 
-`@testing-library/react`, formerly called `react-testing-library`, is a tool that has a bunch of convenience features that make testing React significantly easier and is now the recommended way of testing React, supplanting [Enzyme][enzyme]. Previous versions of this course teach Enzyme if you'd like to see that.
+`@testing-library/react`, formerly called `react-testing-library`, is a tool that has a bunch of convenience features that make testing React significantly easier and is now the recommended way of testing React, supplanting [Enzyme][enzyme]. Previous versions of this course teach Enzyme if you'd like to see that (though I wouldn't recommend it unless you have to.)
 
 Next go into your src directory and create a folder called `__tests__`. Notice that's double underscores on both sides. Why double? They borrowed it from Python where double underscores ("dunders" as I've heard them called) mean something magic happens (in essence it means the name itself has significance and something is looking for that path name exactly.) In this case, Jest assumes all JS files in here are tests.
 

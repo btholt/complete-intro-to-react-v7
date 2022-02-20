@@ -56,17 +56,14 @@ Now we're also using mapDispatchToState which lets us write functions to dispatc
 import { connect } from "react-redux";
 
 // remove all the ThemeContext stuff and the interior function
-// replace `context.theme` with just `this.props.theme` for the backgroundColor
+// replace `theme` with `this.props.theme` for the backgroundColor
 
 // bottom
 const mapStateToProps = ({ theme }) => ({ theme });
-
-const WrappedDetails = connect(mapStateToProps)(Details);
-
-// replace DetailsWithRouter
 const ReduxWrappedDetails = connect(mapStateToProps)(Details);
 
-const DetailsWithRouter = withRouter(ReduxWrappedDetails);
+// replace inside WrappedDetails
+<ReduxWrappedDetails params={params} />;
 ```
 
 Now it should work! Redux is a great piece of technology that adds a lot of complexity to your app. Don't add it lightly. I'd say you'd rarely want to start a new project using Redux: hit the problems first and then refactor it in. You just saw how.

@@ -10,5 +10,8 @@ Here you can see the four files we've written tests for. One file, `useBreedList
 
 Lastly, add `coverage/` to your `.gitignore` since this shouldn't be checked in.
 
+> 🏁 [Click here to see the state of the project up until now: testing][step]
+
+[step]: https://github.com/btholt/citr-v7-project/tree/master/testing
 [istanbul]: https://istanbul.js.org/
 [they-might-be-giants]: https://youtu.be/vsQrKZcYtqg
