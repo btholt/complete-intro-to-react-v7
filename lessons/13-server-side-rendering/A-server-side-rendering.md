@@ -1,5 +1,5 @@
 ---
-section: "Server Side Rendering"
+description: "Server side rendering is a key technique to achieving quick page loads, particularly for slow networks and low powered devices. Brian shows you a simple approach to using SSR for your React app."
 ---
 
 > Please start with a fresh copy of this app: [Adopt Me!][app]

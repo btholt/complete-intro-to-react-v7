@@ -1,5 +1,5 @@
 ---
-section: "Server Side Rendering"
+description: "React not only supports a render to string server side rendering, it also supports streaming markup to the client via renderToNodeStream allowing your app to load even faster."
 ---
 
 This is all cool, but we can make it _better_.

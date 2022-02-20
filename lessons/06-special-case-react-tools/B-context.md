@@ -88,7 +88,7 @@ Lastly let's go make the theme changeable. Head back to SearchParams.js.
 // also grab setTheme
 const [theme, setTheme] = useContext(ThemeContext);
 
-// below BreedDropdown
+// below the breed dropdown
 <label htmlFor="theme">
   Theme
   <select

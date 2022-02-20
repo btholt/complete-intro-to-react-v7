@@ -15,11 +15,6 @@ interface IProps {
 // add types to class
 class Carousel extends Component<IProps> { … }
 
-// add types to state
-state = {
-  active: 0
-};
-
 // modify handleIndexClick
 handleIndexClick = (event: MouseEvent<HTMLElement>): void => {
   if (!(event.target instanceof HTMLElement)) {
@@ -32,9 +27,6 @@ handleIndexClick = (event: MouseEvent<HTMLElement>): void => {
     });
   }
 };
-
-// add return type
-render(): ReactNode { }
 ```
 
 - React.Component is a generic, in that it can accept other types. Here we're telling it what its state and props will look like. We start the interfaces off with a capital I because this signifies that this is an interface. This is a common pattern and one TSLint enforced but ESLint doesn't by deafult. I'm showing you so you can make your own call.

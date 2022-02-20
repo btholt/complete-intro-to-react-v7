@@ -34,12 +34,9 @@ Onto Details. Rename it Details.tsx
 
 ```tsx
 // imports
-import { withRouter, RouteComponentProps } from "react-router-dom";
 import { PetAPIResponse, Animal } from "./APIResponsesTypes";
 
-class Details extends Component<RouteComponentProps<{ id: string }>> { … }
-
-// add public to methods
+class Details extends Component<{ params: { id?: string }}> { … }
 
 // replace state
 state = {
@@ -61,24 +58,22 @@ const json = (await res.json()) as PetAPIResponse;
 adopt = () => (window.location.href = "http://bit.ly/pet-adopt");
 
 // error boundary
-const DetailsErrorBoundary: FunctionComponent = function DetailsErrorBoundary() {
+const WrappedDetails = () => {
+  const params = useParams<{ id: string }>();
   return (
     <ErrorBoundary>
-      <DetailsWithRouter />
+      <Details params={params} />
     </ErrorBoundary>
   );
 };
-
-export default DetailsErrorBoundary;
 ```
 
 - We need to tell TypeScript what props each component expects. Now when you import that component elsewhere, TS will make sure the consumer passes all the right props in.
-- We need to use React Router's RouteComponentProps params because the ID param will come from the router, not directly from the consumer.
 - We have to give all state a default setting. This prevents errors on the initial render and it gives TypeScript the ability to infer all your types.
 - It can't tell what type photos is so we tell it's an array of strings from the pet library.
 - We had to add `.href` to the end of location. Technically that API expect a Location object but it just works with a string. With TS we need to be a bit more adherent to the spec so we'll do it the correct by setting `.href`.
 - TS still won't be happy because our other pages haven't been typed yet. We're getting there.
-- We changed up the export a bit so we could just use FunctionComponent. This will ease using it in other places because TypeScript knows for a fact this is a FunctionComponent.
+- Technically the id param can come back as undefined. We have to provide for that with the `?` in the params.
 
 > 🏁 [Click here to see the state of the project up until now: typescript-2][step]
 

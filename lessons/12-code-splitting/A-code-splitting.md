@@ -1,5 +1,5 @@
 ---
-section: "Code Splitting"
+description: "Code splitting is essential to having small download sizes. Brian goes over the most straight forward approach to using Suspense and React.lazy to code split your app."
 ---
 
 Code splitting is _essential_ to having small application sizes, particularly with React. React is already forty-ish kilobytes just for the framework. This isn't huge but it's enough that it will slow down your initial page loads (by up to a second and a half on 2G speeds.) If you have a lot third party libraries on top of that, you've sunk yourself before they've even started loading your page.

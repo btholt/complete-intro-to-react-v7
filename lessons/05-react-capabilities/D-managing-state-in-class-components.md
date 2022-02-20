@@ -43,7 +43,7 @@ class Carousel extends Component {
 export default Carousel;
 ```
 
-Add the Carousel component to the Detail page.
+Add the Carousel component to the Details page.
 
 ```javascript
 // import at top
