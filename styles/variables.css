@@ -1,7 +1,7 @@
 :root {
-  --primary: #dfa067;
-  --secondary: #93aca7;
-  --highlight: #224159;
+  --primary: #aaa;
+  --secondary: #333;
+  --highlight: #333;
 
   --text-header: var(--primary);
   --text-main-headers: var(--highlight);
@@ -11,6 +11,7 @@
   --bg-main: white;
   --bg-dots: var(--highlight);
   --bg-lesson: white;
+  --bg-preface: var(--primary);
 
   --nav-buttons: var(--highlight);
   --nav-buttons-text: white;
