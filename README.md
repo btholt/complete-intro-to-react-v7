@@ -1,10 +1,6 @@
-<p align="center">
-
-[![Complete Intro to Linux and the CLI](/public/images/course-icon.png)][course]
+<p align="center"><a href="https://bit.ly/reactv7"><img alt="react logo" title="React" src="./public/images/course-icon.png" /></a></p>
 
 [![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)][fem]
-
-</p>
 
 [Please click here][course] to head to the course website.
 
