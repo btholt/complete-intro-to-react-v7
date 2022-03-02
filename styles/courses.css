@@ -78,6 +78,10 @@ a {
   justify-content: center;
 }
 
+.navbar-info svg {
+  max-width: 14px;
+}
+
 header .cta-btn {
   display: none; /* only displays at large screen sizes */
 }
