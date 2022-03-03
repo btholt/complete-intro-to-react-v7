@@ -11,7 +11,7 @@ In the preceding course, we went over `useState`, `useEffect`, `useContext`, and
 
 `useState` allows us to make our components stateful. Whereas this previously required using a class component, hooks give us the ability to write it using just functions. It allows us to have more flexible components. In our example component, everytime you click on the h1 (bad a11y, by the way) it'll change colors. It's doing this by keeping that bit of state in a hook which is being fed in anew every render so it always has the latest state.
 
-[codesandbox]: https://codesandbox.io/s/github/btholt/react-hooks-examples-v4/tree/master/
+[codesandbox]: https://codesandbox.io/s/github/btholt/react-hooks-examples-v4/tree/main/
 [state]: https://codesandbox.io/s/github/btholt/react-hooks-examples-v4/tree/main?file=/src/State.js
 [closures]: https://frontendmasters.com/courses/javascript-foundations/closure-introduction/
 [fibonacci]: https://en.wikipedia.org/wiki/Fibonacci_number
