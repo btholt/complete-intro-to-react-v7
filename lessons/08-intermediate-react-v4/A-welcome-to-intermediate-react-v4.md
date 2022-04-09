@@ -15,6 +15,6 @@ Specifically, most modules will work on a fresh copy of [this folder][project]. 
 
 Alright! Let's have some fun with Intermdiate React v4!
 
-[intro]: https://btholt.github.io/complete-intro-to-react-v7/intro
+[intro]: https://btholt.github.io/complete-intro-to-react-v7/lessons/welcome/intro
 [citr]: https://github.com/btholt/citr-v7-project/
 [project]: https://github.com/btholt/citr-v7-project/tree/master/12-portals-and-refs
