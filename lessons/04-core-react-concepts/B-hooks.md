@@ -79,7 +79,8 @@ Let's add the ESLint rule. Run `npm install -D eslint-plugin-react-hooks@4.3.0`.
     …
     "plugin:react-hooks/recommended",
     …
-  ]
+  ],
+  "plugins": […, "react-hooks"],
 }
 ```
 
