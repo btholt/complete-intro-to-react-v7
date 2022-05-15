@@ -114,7 +114,7 @@ This particular configuration has a lot of rules to help you quickly catch commo
 - react is mostly common React bugs like not calling one of your props children.
 - `eslint-plugin-react` now requires you to inform of it what version of React you're using. We're telling it here to look at the package.json to figure it out.
 - `"react/react-in-jsx-scope": 0` is new since you used to have to import React everywhere but now with the recent revision of React you don't need to.
-- Prop types are allow you to runtime type props to a component. In general if you're interested in doing that just use TypeScript.
+- Prop types allow you to add runtime type props to a component. In general if you're interested in doing that just use TypeScript.
 
 Now your project should pass lint.
 
