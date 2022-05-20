@@ -151,7 +151,7 @@ const breeds = [];
 </label>;
 ```
 
-So now we have a breed dropdown. The only really new thing we did was use the `disabled` property to disable the dropdown when you don't have any breeds. We're going to use the API to request breeds based on the animal selected. If you select `dog`, you want to see poodles, labradors, and chihuahuas and not parrots, tabbies, and Maine coons. The API has and endpoint that if you give it a valid animal. We'll show you how to do that in the next lesson with effects.
+So now we have a breed dropdown. The only really new thing we did was use the `disabled` property to disable the dropdown when you don't have any breeds. We're going to use the API to request breeds based on the animal selected. If you select `dog`, you want to see poodles, labradors, and chihuahuas and not parrots, tabbies, and Maine coons. The API has an endpoint that will give you a breed if you give it a valid animal. We'll show you how to do that in the next lesson with effects.
 
 > 🏁 [Click here to see the state of the project up until now: 04-hooks][step]
 
