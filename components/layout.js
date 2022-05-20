@@ -23,6 +23,19 @@ function Layout({ children }) {
             linkedin={courseInfo.social.linkedin}
           />
         </div>
+        <script
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          data-hostname="btholt.github.io/complete-intro-to-react-v7"
+        ></script>
+        <noscript>
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif?hostname=btholt.github.io/complete-intro-to-react-v7"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </HeaderProvider>
     </CourseInfoProvider>
   );
