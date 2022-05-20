@@ -1,5 +1,5 @@
 ---
-description: "Babel transforms your JS code from futuristic code to code that is understandable by older browsers. Via a package called browserslist (which Parcel installed for you) you can Babel what browsers to target."
+description: "Babel transforms your JS code from futuristic code to code that is understandable by older browsers. Via a package called browserslist (which Parcel installed for you) you can tell Babel what browsers to target."
 ---
 
 Babel transforms your JS code from futuristic code to code that is understandable by older browsers. Via a package called browserslist (which Parcel installed for you) you can Babel what browsers to target.
