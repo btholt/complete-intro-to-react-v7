@@ -8,7 +8,7 @@ In general I find two reasons to break a component into smaller components: reus
 
 Other times it can be useful to break concepts down into smaller concepts to make a component read better. For example, if we put all the logic for this entire page into one component, it would become pretty hard to read and manage. By breaking it down we can make each component easier to understand when you read it and thus maintain.
 
-Let's make a better display for our Pets components. Make a new file called Results.js.
+Let's make a better display for our Pet components. Make a new file called Results.js.
 
 ```javascript
 import Pet from "./Pet";
