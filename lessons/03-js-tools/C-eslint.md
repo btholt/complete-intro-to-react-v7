@@ -5,7 +5,7 @@ description: "An essential part of maintaining a project a long time is discipli
 
 On top of Prettier which takes care of all the formatting, you may want to enforce some code styles which pertain more to usage: for example you may want to force people to never use `with` which is valid JS but ill advised to use. [ESLint][eslint] comes into play here. It will lint for this problems.
 
-First of all, run `npm install -D eslint@8.8.0 eslint-config-prettier@8.3.0` to install eslint in your project development dependencies. Then you may configure its functionalities.
+First of all, run `npm install -D eslint@8.8.0 eslint-config-prettier@8.3.0` to install ESLint in your project development dependencies. Then you may configure its functionalities.
 
 There are dozens of preset configs for ESLint and you're welcome to use any one of them. The [Airbnb config][airbnb] is very popular, as is the standard config (both of which I taught in previous versions of this class). I'm going to use a looser one for this class: `eslint:recommended`. Let's create an `.eslintrc.json` file to start linting our project.
 
