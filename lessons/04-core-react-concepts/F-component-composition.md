@@ -81,7 +81,7 @@ export default Pet;
 
 Looks much better! The links don't go anywhere yet but we'll get there. We don't have a good loading experience yet though. Right now we just seem unresponsive. Using a new tool to React called Suspense we can make the DOM rendering wait until we finish loading our data, show a loader, and then once it finishes we can resume rendering it.
 
-The previous way you would have done this is just keep track of a boolean loading state as a hook and then conditionally shown UI based about that boolean. _Now_, with suspense, you throw a promise from within that component and React will catch that promise and _suspend_ that rendering and show a fallback while it waits for that rendering to complete. We'll see that in a bit.
+The previous way you would have done this is just keep track of a boolean loading state as a hook and then conditionally shown UI based about that boolean. _Now_, with Suspense, you throw a promise from within that component and React will catch that promise and _suspend_ that rendering and show a fallback while it waits for that rendering to complete. We'll see that in a bit.
 
 > 🏁 [Click here to see the state of the project up until now: 07-component-composition][step]
 
