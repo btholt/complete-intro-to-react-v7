@@ -41,7 +41,7 @@ Notice we're using `className` instead of `class` on the HTML element for CSS cl
 
 Like `className`, `htmlFor` is used because `for` is a reserved word in JS.
 
-So if we type in our input and it re-renders, what gets out in the `input` tag? Well, its value is tied to `location` and nothing changed that, so it remains the same. In other words, two way data binding is _not_ free in React. I say this is a feature because it makes you explicit on how you handle your data. Let's go make it work.
+So if we type in our input and it re-renders, what gets out in the `input` tag? Well, its value is tied to `location` and nothing changed that, so it remains the same. In other words, two way data binding is _not_ free in React. I say this is a feature because it makes you be explicit on how you handle your data. Let's go make it work.
 
 ```javascript
 // in SearchParams.js
@@ -69,7 +69,7 @@ const [location, setLocation] = useState("");
 - You can make your own custom hooks; `useState` is just one of many.
 - Historically, React has been written using `class`es with state being on the instance of the component. This is still a supported pattern in React. We'll see how to do it later.
 
-> I'm showing you how to do a "controlled form" in that we're using hooks to control each part of the form. In reality, it'd be better to leave these _uncontrolled_ (aka don't set the value) and wrap the whole thing in a form. Then we can listen for submit events and use that event to gather info off the form. This is less code and less burdensome to write. If you have a standard form sort of thing to write, do that an uncontrolled form. If you need to do dynamic validation, react to a user typing a la typeahead, or something of the ilk, then a controlled input is perfect, otherwise stick to uncontrolled.
+> I'm showing you how to do a "controlled form" in that we're using hooks to control each part of the form. In reality, it'd be better to leave these _uncontrolled_ (aka don't set the value) and wrap the whole thing in a form. Then we can listen for submit events and use that event to gather info off the form. This is less code and less burdensome to write. If you have a standard form sort of thing to write, do that as an uncontrolled form. If you need to do dynamic validation, react to a user typing a la typeahead, or something of the ilk, then a controlled input is perfect, otherwise stick to uncontrolled.
 
 Let's add the ESLint rule. Run `npm install -D eslint-plugin-react-hooks@4.3.0`. Add this to ESLint:
 
