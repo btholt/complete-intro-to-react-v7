@@ -109,12 +109,12 @@ This is a little more complicated config than I used in previous versions of the
 
 This particular configuration has a lot of rules to help you quickly catch common bugs but otherwise leaves you to write code how you want.
 
-- The import plugin helps ESLint catch commons bugs around imports, exports, and modules in general
+- The import plugin helps ESLint catch common bugs around imports, exports, and modules in general.
 - jsx-a11y catches many bugs around accessibility that can accidentally arise using React, like not having an `alt` attribute on an `img` tag.
 - react is mostly common React bugs like not calling one of your props children.
 - `eslint-plugin-react` now requires you to inform of it what version of React you're using. We're telling it here to look at the package.json to figure it out.
 - `"react/react-in-jsx-scope": 0` is new since you used to have to import React everywhere but now with the recent revision of React you don't need to.
-- Prop types are allow you to runtime type props to a component. In general if you're interested in doing that just use TypeScript.
+- Prop types allow you to add runtime type props to a component. In general if you're interested in doing that just use TypeScript.
 
 Now your project should pass lint.
 
