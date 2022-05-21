@@ -26,7 +26,7 @@ export default ThemeContext;
 
 A Consumer is how you consume from the above provider. A Consumer accepts a function as a child and gives it the context which you can use. We won't be using the Consumer directly: a function called `useContext` will do that for us.
 
-The object provided to context is the default state it uses when it can find no Provider above it, useful if there's a chance no provider will be there and for testing. It's also useful for TypeScript because TypeScript will enforce these types. Here we're giving it the shape of a `useState` call because we'll using `useState` with it. You do not have to use context with hooks; [see v4][v4] if you want to see how to do it without hooks. That example also has a more complicated data shape. This example is a lot more simple. If you wanted a more complicated data shape, you'd replace `"green"` with an object full of other properties.
+The object provided to context is the default state it uses when it can find no Provider above it, useful if there's a chance no provider will be there and for testing. It's also useful for TypeScript because TypeScript will enforce these types. Here we're giving it the shape of a `useState` call because we'll be using `useState` with it. You do not have to use context with hooks; [see v4][v4] if you want to see how to do it without hooks. That example also has a more complicated data shape. This example is a lot more simple. If you wanted a more complicated data shape, you'd replace `"green"` with an object full of other properties.
 
 Now we're going to make all the buttons' background color in the app be governed by the theme. First let's go to App.js:
 
