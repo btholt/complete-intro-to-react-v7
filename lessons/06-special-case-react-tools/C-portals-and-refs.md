@@ -11,7 +11,7 @@ First thing, let's go into index.html and add a separate mount point:
 <div id="modal"></div>
 ```
 
-This where the modal will actually be mounted whenever we render to this portal. Totally separate from our app root.
+This is where the modal will actually be mounted whenever we render to this portal. Totally separate from our app root.
 
 Next create a file called Modal.js:
 
