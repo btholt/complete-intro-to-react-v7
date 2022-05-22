@@ -16,7 +16,7 @@ Our home page doesn't paginate doesn't results. With some nice buttons, you coul
 
 [Use the Petfinder API!][pf] In previous versions of this course we did actually use the Petfinder API but it was occasionally unreliable so I made the fake API you're using to make sure you could always work through the code okay.
 
-[They even have a JavaScript library!][pf-sdk] You'll have to sign up for API credentials (secret and key) on their website, install the library, and then use the library everywhere we were using `fetch(<url>)` you need to change it to `pf.animal.search()` or whatever calls. This API returns different shpae of data. Last time I checked it looks like this:
+[They even have a JavaScript library!][pf-sdk] You'll have to sign up for API credentials (secret and key) on their website, install the library, and then use the library everywhere we were using `fetch(<url>)` you need to change it to `pf.animal.search()` or whatever calls. This API returns different shape of data. Last time I checked it looks like this:
 
 ```json
 {
