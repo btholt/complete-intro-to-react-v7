@@ -27,11 +27,11 @@ function Layout({ children }) {
           async
           defer
           src="https://scripts.simpleanalyticscdn.com/latest.js"
-          data-hostname="btholt.github.io/complete-intro-to-react-v7"
+          data-hostname="react-v7.holt.courses"
         ></script>
         <noscript>
           <img
-            src="https://queue.simpleanalyticscdn.com/noscript.gif?hostname=btholt.github.io/complete-intro-to-react-v7"
+            src="https://queue.simpleanalyticscdn.com/noscript.gif?hostname=react-v7.holt.courses"
             alt=""
             referrerPolicy="no-referrer-when-downgrade"
           />
