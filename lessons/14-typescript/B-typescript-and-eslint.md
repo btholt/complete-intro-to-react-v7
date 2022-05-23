@@ -5,7 +5,7 @@ description: ""
 Let's take the time now to fix our ESLint. In previous versions of this course we used the project TSLint but that project has since been deprecated in favor of converging on ESLint. There's a project called `typescript-eslint` that bridges the gap between the two projects.
 
 1. Run `npm uninstall @babel/eslint-parser`
-1. Run `npm install -D eslint-import-resolver-typescript@2.4.0 @typescript-eslint/eslint-plugin@4.16.1 @typescript-eslint/parser@4.16.1`
+1. Run `npm install -D eslint-import-resolver-typescript@2.5.0 @typescript-eslint/eslint-plugin@5.13.0 @typescript-eslint/parser@5.13.0`
 1. Change your package.json lint entry to `"lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",`
 1. Add the following to .eslintrc.json
 
