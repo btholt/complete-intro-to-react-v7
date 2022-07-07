@@ -30,7 +30,7 @@ Create this file called `.eslintrc.json`.
 }
 ```
 
-This is a combination of the recommended configs of ESLint and Prettier. This will lint for both normal JS stuff as well as JSX stuff. Run `npx eslint script.js` now and you should see we have a few errors. Run it again with the `--fix` flag and see it will fix some of it for us! Go fix the rest of your errors and come back. Let's go add this to our npm scripts.
+This is a combination of the recommended configs of ESLint and Prettier. This will lint for both normal JS stuff as well as JSX stuff. Run `npx eslint src/App.js` now and you should see we have a few errors. Run it again with the `--fix` flag and see it will fix some of it for us! Go fix the rest of your errors and come back. Let's go add this to our npm scripts.
 
 ```json
 "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
