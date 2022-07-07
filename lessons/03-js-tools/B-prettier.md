@@ -14,7 +14,7 @@ Need to tool around a bit with it before you trust it? [Go here][prettier-playgr
 
 Let's go integrate this into our project. It's _pretty_ easy (since I'm a dad now, I'm legally obligated to make this joke.)
 
-Either install Prettier globally `npm install --global prettier` or replace when I run `prettier` with (from the root of your project) `npx prettier`. From there, run `prettier script.js`. This will output the formatted version of your file. If you want to actually write the file, run `prettier --write script.js`. Go check script.js and see it has been reformatted a bit. I will say for non-JSX React, Prettier makes your code less readable. Luckily Prettier supports JSX! We'll get to that shortly.
+Either install Prettier globally `npm install --global prettier` or replace when I run `prettier` with (from the root of your project) `npx prettier`. From there, run `prettier src/App.js`. This will output the formatted version of your file. If you want to actually write the file, run `prettier --write src/App.js`. Go check App.js and see it has been reformatted a bit. I will say for non-JSX React, Prettier makes your code less readable. Luckily Prettier supports JSX! We'll get to that shortly.
 
 Prettier has a few configurations but it's mostly meant to be a tool everyone uses and doesn't argue/bikeshed about the various code style rules. [Here they are][prettier-options]. I just use it as is since I'm lazy. Prettier can also understand [flow][flow] and [TypeScript][ts].
 
