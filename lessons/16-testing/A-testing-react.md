@@ -66,7 +66,7 @@ Now that we've got that going, let's go write a test.
 
 [jest]: https://jestjs.io
 [jasmine]: https://jasmine.github.io/
-[enzyme]: http://airbnb.io/enzyme/
+[enzyme]: https://enzymejs.github.io/enzyme/
 [istanbul]: https://istanbul.js.org
 [res]: https://raw.githubusercontent.com/btholt/complete-intro-to-react-v5/testing/__mocks__/@frontendmasters/res.json
-[app]: https://github.com/btholt/citr-v7-project/tree/master/12-portals-and-refs
+[app]: https://github.com/btholt/citr-v7-project/tree/main/12-portals-and-refs
