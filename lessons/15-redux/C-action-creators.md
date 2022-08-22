@@ -30,7 +30,7 @@ export default function changeAnimal(location) {
 }
 ```
 
-changeLocation.js
+changeBreed.js
 
 ```javascript
 export default function changeBreed(location) {
